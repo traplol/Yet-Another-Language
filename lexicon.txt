@@ -1,0 +1,41 @@
+Identifier          <identifier>
+
+NumberLiteral       <number>
+StringLiteral       <string>
+BooleanLiteral      ('true'|'false')
+
+If                  'if'
+Else                'else'
+Return              'return'
+Def                 'def'
+Var                 'var'
+For                 'for'
+While               'while'
+Func                'func'
+
+LBrack              '['
+RBrack              ']'
+LParen              '('
+RParen              ')'
+LBrace              '{'
+RBrace              '}'
+
+Assign              '='
+Add                 '+'
+Subtract            '-'
+Multiply            '*'
+Divide              '/'
+Modulo              '%'
+EqualTo             '=='
+NotEqual            '!='
+LessThan            '<'
+LessOrEqual         '<='
+GreaterThan         '>'
+GreaterOrEqual      '>='
+BoolAnd             '&&'
+BoolOr              '||'
+BoolNot             '!'
+Dot                 '.'
+Semicolon           ';'
+Comma               ','
+Comment             '#'

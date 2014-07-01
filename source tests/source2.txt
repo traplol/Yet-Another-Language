@@ -1,0 +1,16 @@
+func b(c){
+    for (var i = 0; i < 10; i = i+i;) {
+        if (i == 5) {
+            return 5;
+        }
+    }
+}
+
+func c(d){
+    while(d < 5) {
+        d = d+1;
+    }
+    return d;
+}
+
+print(b(c(1)));

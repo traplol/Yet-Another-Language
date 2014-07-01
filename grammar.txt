@@ -1,0 +1,43 @@
+<toplevelexpr>      ::= <expression>
+
+<expression>        ::= <primary> <binoprhs>
+                    |   ?<expression> ';'
+
+<binoprhs>          ::= ( operator <primary> )
+    
+<primary>           ::= <identifierexp>
+                    |   <parenexpr>
+                    |   <numberexpr>
+                    |   <booleanexpr>
+                    |   <stringexpr>
+                    |   <ifexpr>
+                    |   <forexpr>
+                    |   <whileexpr>
+                    |   <defexpr>
+                    |   <varexpr>
+                    |   <returnexpr>
+
+<parenexpr>         ::= '(' <expression> ')'
+<blockscopeexpr>    ::= '{' ( <expression> )* '}'
+
+<callexpr>          ::= identifier '(' <expression>* ?( ',' <expression> )*')'
+
+<numberexpr>        ::= number
+<booleanexpr>       ::= ( "true" | "false" )
+<stringexpr>        ::= '"' string '"'
+    
+<ifexpr>            ::= 'if' <parenexpr> <blockscopeexpr> ?( 'else' <blockscopeexpr> )
+    
+<forexpr>           ::= 'for' '(' <varexpr> <expression> <expression> ')' <blockscopeexpr>
+    
+<whileexpr>         ::= 'while' <parenexpr> <blockscopeexpr>
+    
+<defexpr>           ::= 'def' identifier '=' <expression>
+    
+<varexpr>           ::= 'var' identifier ?( '=' <expression> ) ';'
+                    |   identifier '=' <expression>
+
+<prototype>         ::= identifier '(' identifier, ... ')'
+<func>              ::= 'func' <prototype> <blockscopeexpr>
+    
+<returnexpr>        ::= 'return' <expression>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DCEF4F0-9138-4200-B261-3E79460C3F42}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YAL</RootNamespace>
+    <AssemblyName>YAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analyzers\Lexical\Lexer.cs" />
+    <Compile Include="Analyzers\Lexical\Token.cs" />
+    <Compile Include="Analyzers\Lexical\TokenTypes.cs" />
+    <Compile Include="Analyzers\Regexes.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\ArrayAccessExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\ArrayExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\BinaryOperatorExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\BlockScopeExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\BooleanExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\CallExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\DefAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\ForExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\FuncAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\IdentifierExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\IfExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\NumberExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\PrototypeAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\ReturnExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\StringExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\AstBuilder.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\IExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\VarAst.cs" />
+    <Compile Include="Analyzers\Syntax\Ast\WhileExprAst.cs" />
+    <Compile Include="Analyzers\Syntax\ExpressionParsers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProgramSpace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
